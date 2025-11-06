@@ -190,9 +190,11 @@ match btn:
                 
         - Principais Mercados da Cidade  
         - Drive Thru
-            - **Camaquã**: Av. Jose Loureiro da Silva, 787 - Carvalho Bastos, Camaquã - RS, 96784-058
-            - **Cristal**: Rua Pedro Osório, 109 - Centro, Cristal - RS, 96195-000
-            - **Tapes**: Av. Borges de Medeiros, 156, Tapes - RS, 96760-000
+            - **Camaquã**: Av. Jose Loureiro da Silva, 787 - Carvalho Bastos, Camaquã - RS
+            - **Cristal**: Rua Pedro Osório, 109 - Centro, Cristal - RS
+            - **Tapes**: Av. Borges de Medeiros, 156, Tapes - RS
+            - **São Lourenço**: Rua Julho de Castilhos, 1454, São Lourenço - RS
+            - **Pacheca**: Rua Santos Dummont, 629, Camaquã - RS
             
                 
 
@@ -200,6 +202,9 @@ match btn:
         
         
         """
+        pdf = "https://drive.google.com/file/d/1DCgVq2STIyTkQJi69SrrQgXpgODkRaye/view?usp=sharing"
+        st.markdown(f"**[Se você é Voluntário clique aqui para acessar o Manual de Boas Práticas]({pdf})**")
+
     case 'Prioridades':
         ############## ITENS PRIORITARIOS
         st.header("Itens Prioritários")
