@@ -202,23 +202,22 @@ match btn:
         
         
         """
-        pdf = "https://drive.google.com/file/d/1DCgVq2STIyTkQJi69SrrQgXpgODkRaye/view?usp=sharing"
+        pdf = st.secrets.gsheet.pdf
         st.markdown(f"**[Se você é Voluntário clique aqui para acessar o Manual de Boas Práticas]({pdf})**")
 
     case 'Prioridades':
         ############## ITENS PRIORITARIOS
-        st.header("Itens Prioritários")
+        st.header("Itens Prioritários ⚠️")
         necessidades = pd.read_csv(st.secrets.gsheet.necessidades, index_col='Localidade')
 
         # "Esses são os itens prioritários em cada localidade"
-        ":red[*Isso nos ajuda a termos uma distribuição adqueada para montagem das cestas básicas*]"
-        
+        st.error("**Isso nos ajuda a termos uma distribuição adqueada para montagem das cestas básicas**")
         locais = necessidades.index.unique()
         
         for localidade in locais:
             # Imprime o nome da localidade (o cabeçalho)
         
-            st.subheader(f"\n{localidade}")
+            st.markdown(f"#### {localidade}")
 
             # Filtra o DataFrame original para obter apenas as linhas dessa localidade
             # .loc[] é usado para acessar por índice
@@ -232,9 +231,11 @@ match btn:
                 # Caso seja um único valor (string)
                 lista_produtos = [produtos_da_localidade]
 
+            lista_formatada = ', '.join(lista_produtos)
+            st.markdown(lista_formatada)
             # st.write(lista_produtos)
-            for prod in lista_produtos:
-                st.markdown(f"""\t- {prod}""")
+            # for prod in lista_produtos:
+            #     st.markdown(f"""- {prod}""")
             
 
 
