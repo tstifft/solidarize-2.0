@@ -211,7 +211,11 @@ match btn:
         necessidades = pd.read_csv(st.secrets.gsheet.necessidades, index_col='Localidade')
 
         # "Esses são os itens prioritários em cada localidade"
-        st.error("**Isso nos ajuda a termos uma distribuição adqueada para montagem das cestas básicas**")
+        "#### :red[***Para uma distribuição adqueada na montagem das cestas básicas***]"
+        """
+        
+        """
+        # st.error("**Isso nos ajuda a termos uma distribuição adqueada para montagem das cestas básicas**")
         locais = necessidades.index.unique()
         
         for localidade in locais:
@@ -232,7 +236,7 @@ match btn:
                 lista_produtos = [produtos_da_localidade]
 
             lista_formatada = ', '.join(lista_produtos)
-            st.markdown(lista_formatada)
+            st.markdown('   -> '+lista_formatada)
             # st.write(lista_produtos)
             # for prod in lista_produtos:
             #     st.markdown(f"""- {prod}""")
